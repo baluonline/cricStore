@@ -1,14 +1,14 @@
 import { EllipsisIcon, ShoppingCart, UserIcon } from "lucide-react";
 import Link from "next/link";
 import { Button } from "../../button";
-// import ModeToggle from "./mode-toggle";
+import ModeToggle from "./mode-toggle";
 import { Sheet, SheetContent, SheetTrigger } from "../../sheet";
 
 const Menu = () => {
   return (
     <div className="flex justify-end gap-3">
       <nav className="hidden md:flex w-full max-w-sm gap-1">
-        {/* <ModeToggle /> */}
+        <ModeToggle />
         <Button asChild variant="ghost">
           <Link href="/cart">
             <ShoppingCart />

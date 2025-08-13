@@ -11,12 +11,18 @@ const currency = z
 export const insertProductSchema = z.object({
   name: z.string().min(3, "Name must at least 3 characters long"),
   slug: z.string().min(3, "Slug must at least 3 characters long"),
-  category: z.string().min(3, "Category must at least 3 characters long"),
+  category: z
+    .string()
+    .min(3, "Category must at least 3 characters long")
+    .nullable(),
   brand: z.string().min(3, "Brand must at least 3 characters long"),
-  description: z.string().min(3, "Description must at least 3 characters long"),
+  description: z
+    .string()
+    .min(3, "Description must at least 3 characters long")
+    .nullable(),
   stock: z.coerce.number(),
   images: z.array(z.string()).min(1, "Product must have at least one image"),
-  isFeatured: z.string().optional(),
+  isFeatured: z.boolean().optional(),
   banner: z.string().nullable(),
   price: currency,
 });
